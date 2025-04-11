@@ -19,6 +19,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     
     while True:
         data, addr = s.recvfrom(1024)
+        print(f"Conectado por {addr}")
         mensagem = data.decode()
         try:
             valor_str, moeda = mensagem.strip().split()
